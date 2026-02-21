@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday! 💌</title>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   <audio id="bgMusic" loop preload="auto">
+    <source src="sound/playme.mp3" type="audio/mpeg">
+</audio>
+    <button id="musicToggle" class="music-btn">🎵 Play</button>
+
+    <div class="app-container">
+        
+        <section id="sec-opening" class="visible">
+            <h1 class="hint-text">Ada pesan spesial buat kamu 💌</h1>
+            <div class="envelope-wrapper" id="envelope">
+                <div class="envelope"></div>
+                <div class="flap"></div>
+                <div class="letter">
+                    <p>Buka ya!</p>
+                </div>
+            </div>
+            <p style="margin-top: 30px; font-size: 14px; color: #888;">(Tap amplopnya)</p>
+        </section>
+
+        <section id="sec-card">
+            <div class="card">
+                <div class="typewriter-text" id="typewriter"></div>
+                <a href="#sec-gallery" class="btn">Lihat Kenangan Kita 📸</a>
+            </div>
+        </section>
+
+        <section id="sec-gallery">
+            <h2>Our Memories</h2>
+            <div class="gallery-grid">
+                <div class="polaroid" onclick="openLightbox(this)">
+                    <img src="https://picsum.photos/400/400?random=1" alt="Foto 1">
+                    <p>Pertama ketemu</p>
+                </div>
+                <div class="polaroid" onclick="openLightbox(this)">
+                    <img src="https://picsum.photos/400/400?random=2" alt="Foto 2">
+                    <p>Jalan bareng</p>
+                </div>
+                <div class="polaroid" onclick="openLightbox(this)">
+                    <img src="https://picsum.photos/400/400?random=3" alt="Foto 3">
+                    <p>Momen lucu</p>
+                </div>
+                <div class="polaroid" onclick="openLightbox(this)">
+                    <img src="https://picsum.photos/400/400?random=4" alt="Foto 4">
+                    <p>Love you!</p>
+                </div>
+            </div>
+            <a href="#sec-game" class="btn" style="margin-top: 30px;">Ada satu game lagi 🎈</a>
+        </section>
+
+        <section id="sec-game">
+            <h2>Pop The Balloons!</h2>
+            <p>Pecahkan balon untuk merangkai kata.</p>
+            
+            <div class="word-display" id="wordDisplay">_ _ _ _ _ _ _ _ _ _ _ _ _</div>
+            
+            <div class="game-area" id="gameArea">
+                <button class="btn" id="startGameBtn" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 5;">Mulai Main</button>
+                
+                <div class="win-modal" id="winModal">
+                    <h3>Happy Birthday! ❤️</h3>
+                    <p>Yeay menang! Selamat bertambah usia ya orang baik. Semoga semua impianmu terkabul dan selalu bahagia. I Love You! ✨</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="">
+        <p class="lightbox-caption" id="lightbox-caption"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
